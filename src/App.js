@@ -7,9 +7,21 @@ import Prompt from './components/Prompt.jsx';
 import AnswerInput from './components/AnswerInput.jsx';
 
 const QUESTIONS = [
-  { prompt: '한글',
+  {
+    prompt: '한글',
     answers: ['hangeul'],
-    translation: 'Hangeul (or Hangul following old romanisation) - the Korean alphabet' }
+    translation: 'Hangeul (or Hangul following old romanisation) - the Korean alphabet'
+  },
+  {
+    prompt: '세종',
+    answers: ['sejong'],
+    translation: 'Sejong the Great (1397-1450), king best known for creating the hangeul alphabet'
+  },
+  {
+    prompt: '한국',
+    answers: ['hanguk'],
+    translation: 'Korea'
+  },
 ];
 
 class App extends Component {
@@ -19,12 +31,12 @@ class App extends Component {
     const newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
 
     this.state = { currentQuestionID: newQuestionID };
-  }
+  };
 
   setNewQuestion = () => {
     let newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
     this.setState({ currentQuestionID: newQuestionID });
-  }
+  };
 
   checkAnswer = (answer) => {
     const currentQuestion = QUESTIONS[this.state.currentQuestionID];
@@ -43,7 +55,7 @@ class App extends Component {
         <AnswerInput checkAnswer={this.checkAnswer} />
       </div>
     );
-  }
+  };
 }
 
 export default App;
