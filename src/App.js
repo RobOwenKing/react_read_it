@@ -30,7 +30,10 @@ class App extends Component {
 
     const newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
 
-    this.state = { currentQuestionID: newQuestionID };
+    this.state = {
+        currentQuestionID: newQuestionID,
+        latestAnswers: []
+      };
   };
 
   setNewQuestion = () => {
@@ -41,9 +44,17 @@ class App extends Component {
   checkAnswer = (answer) => {
     const currentQuestion = QUESTIONS[this.state.currentQuestionID];
     if (currentQuestion.answers.includes(answer.toLowerCase())) {
-      console.log('Correct!');
+      const newLatestAnswers = [this.state.currentQuestionID, ...this.state.latestAnswers];
+      if (newLatestAnswers.length > 5) { newLatestAnswers.pop(); }
+      this.setState({ latestAnswers: newLatestAnswers });
+
+      this.setNewQuestion();
+
+      return true;
     } else {
       console.log('Wrong!');
+
+      return false;
     }
   };
 

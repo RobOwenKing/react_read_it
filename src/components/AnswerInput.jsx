@@ -13,7 +13,9 @@ class AnswerInput extends Component {
 
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      this.props.checkAnswer(this.state.inputValue);
+      if (this.props.checkAnswer(this.state.inputValue)) {
+        this.setState({ inputValue: '' });
+      }
     }
   };
 
