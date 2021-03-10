@@ -5,6 +5,7 @@ import './App.css';
 
 import Prompt from './components/Prompt.jsx';
 import AnswerInput from './components/AnswerInput.jsx';
+import AnswerDisplay from './components/AnswerDisplay.jsx';
 
 const QUESTIONS = [
   {
@@ -64,6 +65,9 @@ class App extends Component {
         <h1>Up to Speed: Reading Korean</h1>
         <Prompt prompt={QUESTIONS[this.state.currentQuestionID].prompt} />
         <AnswerInput checkAnswer={this.checkAnswer} />
+        {this.state.latestAnswers.map((answer,id) => {
+              return <AnswerDisplay key={id} answer={QUESTIONS[answer]} />
+            })}
       </div>
     );
   };
