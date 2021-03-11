@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 import Prompt from './components/Prompt.jsx';
@@ -34,23 +34,33 @@ class App extends Component {
 
     this.state = {
         currentQuestionID: newQuestionID,
-        latestAnswers: []
+        latestAnswers: [],
+        answerCheckContent: 'show-answer'
       };
   };
 
   setNewQuestion = () => {
+    const newLatestAnswers = [this.state.currentQuestionID, ...this.state.latestAnswers];
+    if (newLatestAnswers.length > 5) { newLatestAnswers.pop(); }
+    this.setState({ latestAnswers: newLatestAnswers });
+
     let newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
     this.setState({ currentQuestionID: newQuestionID });
+
+    this.setState({ answerCheckContent: 'show-answer' });
+  };
+
+  handleClickAnswerCheck = () => {
+    const answer = QUESTIONS[this.state.currentQuestionID].answers[0];
+    this.setState({ answerCheckContent: answer });
   };
 
   checkAnswer = (answer) => {
     const currentQuestion = QUESTIONS[this.state.currentQuestionID];
     if (currentQuestion.answers.includes(answer.toLowerCase())) {
-      const newLatestAnswers = [this.state.currentQuestionID, ...this.state.latestAnswers];
-      if (newLatestAnswers.length > 5) { newLatestAnswers.pop(); }
-      this.setState({ latestAnswers: newLatestAnswers });
+      this.setState({ answerCheckContent: 'correct' });
 
-      this.setNewQuestion();
+      window.setTimeout(this.setNewQuestion, 1000);
 
       return true;
     } else {
@@ -65,8 +75,9 @@ class App extends Component {
       <div className="App">
         <h1>Up to Speed: Reading Korean</h1>
         <Prompt prompt={QUESTIONS[this.state.currentQuestionID].prompt} />
-        <AnswerCheck content='correct' />
         <AnswerInput checkAnswer={this.checkAnswer} />
+        <AnswerCheck content={this.state.answerCheckContent}
+            handleClick={this.handleClickAnswerCheck} />
         {this.state.latestAnswers.map((answer,id) => {
               return <AnswerDisplay key={id} answer={QUESTIONS[answer]} />
             })}
