@@ -12,12 +12,12 @@ const QUESTIONS = [
   {
     prompt: '한글',
     answers: ['hangeul'],
-    translation: 'Hangeul (or Hangul following old romanisation) - the Korean alphabet'
+    translation: 'Hangeul (or Hangul after a former romanisation scheme)'
   },
   {
     prompt: '세종',
     answers: ['sejong'],
-    translation: 'Sejong the Great (1397-1450), king best known for creating the hangeul alphabet'
+    translation: 'Sejong the Great (1397-1450), king best known for creating Hangeul'
   },
   {
     prompt: '한국',
@@ -53,6 +53,8 @@ class App extends Component {
   handleClickAnswerCheck = () => {
     const answer = QUESTIONS[this.state.currentQuestionID].answers[0];
     this.setState({ answerCheckContent: answer });
+
+    window.setTimeout(this.setNewQuestion, 1000);
   };
 
   checkAnswer = (answer) => {
