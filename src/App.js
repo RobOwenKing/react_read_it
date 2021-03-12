@@ -8,6 +8,8 @@ import AnswerInput from './components/AnswerInput.jsx';
 import AnswerDisplay from './components/AnswerDisplay.jsx';
 import AnswerCheck from './components/AnswerCheck.jsx';
 
+const synth = window.speechSynthesis;
+
 const QUESTIONS = [
   {
     prompt: '한글',
@@ -69,6 +71,10 @@ class App extends Component {
 
     if (currentQuestion.answers.includes(answer.toLowerCase())) {
       this.setState({ answerCheckContent: 'correct' });
+
+      const toSpeak = new SpeechSynthesisUtterance(currentQuestion.answers[0]);
+      toSpeak.lang = 'ko-KR';
+      synth.speak(toSpeak);
 
       window.setTimeout(this.setNewQuestion, 1000);
     } else {
