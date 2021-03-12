@@ -37,6 +37,7 @@ class App extends Component {
     this.state = {
         currentQuestionID: newQuestionID,
         latestAnswers: [],
+        latestWrongAnswers: [],
         answerCheckContent: 'show-answer',
         inputValue: ''
       };
@@ -78,7 +79,11 @@ class App extends Component {
 
       window.setTimeout(this.setNewQuestion, 1000);
     } else {
-      console.log('Wrong!');
+      if (!this.state.latestWrongAnswers.includes(this.state.currentQuestionID)) {
+        this.state.latestWrongAnswers.setState(prevState => ({
+          latestWrongAnswers: [...prevState.latestWrongAnswers, this.state.currentQuestionID]
+        }));
+      }
     }
   };
 
