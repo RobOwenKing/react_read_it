@@ -27,15 +27,27 @@ class App extends Component {
       };
   };
 
+  setNewQuestion = () => {
+    let newQuestionID;
+    const wrongAnswers = this.state.latestWrongAnswers;
 
+    if (wrongAnswers.length > 0
+        && !this.state.latestAnswers.includes(wrongAnswers[0])) {
+      newQuestionID = wrongAnswers.shift();
+      this.setState({ latestWrongAnswers: wrongAnswers });
+    } else {
+      newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
+    }
+
+    this.setState({ currentQuestionID: newQuestionID });
+  };
 
   startNewRound = () => {
     const newLatestAnswers = [this.state.currentQuestionID, ...this.state.latestAnswers];
     if (newLatestAnswers.length > 5) { newLatestAnswers.pop(); }
     this.setState({ latestAnswers: newLatestAnswers });
 
-    let newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
-    this.setState({ currentQuestionID: newQuestionID });
+    this.setNewQuestion();
 
     this.setState({ answerCheckContent: 'show-answer' });
     this.setState({ inputValue: '' });
