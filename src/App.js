@@ -27,7 +27,9 @@ class App extends Component {
       };
   };
 
-  setNewQuestion = () => {
+
+
+  startNewRound = () => {
     const newLatestAnswers = [this.state.currentQuestionID, ...this.state.latestAnswers];
     if (newLatestAnswers.length > 5) { newLatestAnswers.pop(); }
     this.setState({ latestAnswers: newLatestAnswers });
@@ -47,7 +49,7 @@ class App extends Component {
     const answer = QUESTIONS[this.state.currentQuestionID].answers[0];
     this.setState({ answerCheckContent: answer });
 
-    window.setTimeout(this.setNewQuestion, 1000);
+    window.setTimeout(this.startNewRound, 1000);
   };
 
   checkAnswer = () => {
@@ -61,7 +63,7 @@ class App extends Component {
       toSpeak.lang = 'ko-KR';
       synth.speak(toSpeak);
 
-      window.setTimeout(this.setNewQuestion, 1000);
+      window.setTimeout(this.startNewRound, 1000);
     } else {
       if (!this.state.latestWrongAnswers.includes(this.state.currentQuestionID)) {
         this.setState(prevState => ({
