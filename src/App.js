@@ -8,25 +8,9 @@ import AnswerInput from './components/AnswerInput.jsx';
 import AnswerDisplay from './components/AnswerDisplay.jsx';
 import AnswerCheck from './components/AnswerCheck.jsx';
 
-const synth = window.speechSynthesis;
+import QUESTIONS from './data/questions_korean.js';
 
-const QUESTIONS = [
-  {
-    prompt: '한글',
-    answers: ['hangeul'],
-    translation: 'Hangeul (or Hangul after a former romanisation scheme)'
-  },
-  {
-    prompt: '세종',
-    answers: ['sejong'],
-    translation: 'Sejong the Great (1397-1450), king best known for creating Hangeul'
-  },
-  {
-    prompt: '한국',
-    answers: ['hanguk'],
-    translation: 'Korea'
-  },
-];
+const synth = window.speechSynthesis;
 
 class App extends Component {
   constructor(props) {
