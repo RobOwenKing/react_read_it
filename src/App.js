@@ -80,7 +80,7 @@ class App extends Component {
       window.setTimeout(this.setNewQuestion, 1000);
     } else {
       if (!this.state.latestWrongAnswers.includes(this.state.currentQuestionID)) {
-        this.state.latestWrongAnswers.setState(prevState => ({
+        this.setState(prevState => ({
           latestWrongAnswers: [...prevState.latestWrongAnswers, this.state.currentQuestionID]
         }));
       }
