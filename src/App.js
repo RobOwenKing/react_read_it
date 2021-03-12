@@ -35,7 +35,8 @@ class App extends Component {
     this.state = {
         currentQuestionID: newQuestionID,
         latestAnswers: [],
-        answerCheckContent: 'show-answer'
+        answerCheckContent: 'show-answer',
+        inputValue: ''
       };
   };
 
@@ -48,6 +49,11 @@ class App extends Component {
     this.setState({ currentQuestionID: newQuestionID });
 
     this.setState({ answerCheckContent: 'show-answer' });
+    this.setState({ inputValue: '' });
+  };
+
+  handleChangeAnswerInput = (event) => {
+    this.setState({ inputValue: event.target.value });
   };
 
   handleClickAnswerCheck = () => {
@@ -57,18 +63,16 @@ class App extends Component {
     window.setTimeout(this.setNewQuestion, 1000);
   };
 
-  checkAnswer = (answer) => {
+  checkAnswer = () => {
     const currentQuestion = QUESTIONS[this.state.currentQuestionID];
+    const answer = this.state.inputValue;
+
     if (currentQuestion.answers.includes(answer.toLowerCase())) {
       this.setState({ answerCheckContent: 'correct' });
 
       window.setTimeout(this.setNewQuestion, 1000);
-
-      return true;
     } else {
       console.log('Wrong!');
-
-      return false;
     }
   };
 
@@ -77,7 +81,9 @@ class App extends Component {
       <div className="App">
         <h1>Up to Speed: Reading Korean</h1>
         <Prompt prompt={QUESTIONS[this.state.currentQuestionID].prompt} />
-        <AnswerInput checkAnswer={this.checkAnswer} />
+        <AnswerInput checkAnswer={this.checkAnswer}
+            value={this.state.inputValue}
+            handleChange={this.handleChangeAnswerInput} />
         <AnswerCheck content={this.state.answerCheckContent}
             handleClick={this.handleClickAnswerCheck} />
         {this.state.latestAnswers.map((answer,id) => {
