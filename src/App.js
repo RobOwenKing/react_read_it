@@ -28,7 +28,7 @@ class App extends Component {
   };
 
   setNewQuestion = () => {
-    let newQuestionID;
+    let newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
     const wrongAnswers = this.state.latestWrongAnswers;
 
     if (wrongAnswers.length > 0
@@ -36,7 +36,9 @@ class App extends Component {
       newQuestionID = wrongAnswers.shift();
       this.setState({ latestWrongAnswers: wrongAnswers });
     } else {
-      newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
+      while (this.state.latestAnswers.includes(newQuestionID)) {
+        newQuestionID = Math.floor(Math.random() * QUESTIONS.length);
+      }
     }
 
     this.setState({ currentQuestionID: newQuestionID });
