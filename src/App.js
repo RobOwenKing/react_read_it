@@ -23,8 +23,13 @@ class App extends Component {
         latestAnswers: [],
         latestWrongAnswers: [],
         answerCheckContent: 'show-answer',
-        inputValue: ''
+        inputValue: '',
+        inputClasses: ''
       };
+  };
+
+  resetAnswerInputAndCheck = () => {
+    this.setState({ answerCheckContent: 'show-answer' });
   };
 
   setNewQuestion = () => {
@@ -84,6 +89,10 @@ class App extends Component {
           latestWrongAnswers: [...prevState.latestWrongAnswers, this.state.currentQuestionID]
         }));
       }
+
+      this.setState({ answerCheckContent: 'sorry' })
+      this.setState({ inputClasses: 'animated-shake' })
+      window.setTimeout(this.resetAnswerInputAndCheck, 1000);
     }
   };
 
@@ -94,7 +103,8 @@ class App extends Component {
         <Prompt prompt={QUESTIONS[this.state.currentQuestionID].prompt} />
         <AnswerInput checkAnswer={this.checkAnswer}
             value={this.state.inputValue}
-            handleChange={this.handleChangeAnswerInput} />
+            handleChange={this.handleChangeAnswerInput}
+            classes={this.state.inputClasses} />
         <AnswerCheck content={this.state.answerCheckContent}
             handleClick={this.handleClickAnswerCheck} />
         {this.state.latestAnswers.map((answer,id) => {
