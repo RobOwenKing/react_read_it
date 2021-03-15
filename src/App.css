@@ -19,12 +19,13 @@ input {
 }
 
 .animated-green {
+  background-color: #FFFFFF;
   animation: green-fill linear 1s;
 }
 
 @keyframes green-fill {
   0% { background-color: #6FE12F; }
-  100% { background-color: #FFFFFF;  }
+  50% { background-color: #FFFFFF;  }
 }
 
 /*.App-logo {
