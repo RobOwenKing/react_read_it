@@ -30,6 +30,7 @@ class App extends Component {
 
   resetAnswerInputAndCheck = () => {
     this.setState({ answerCheckContent: 'show-answer' });
+    this.setState({ inputClasses: '' });
   };
 
   setNewQuestion = () => {
@@ -92,7 +93,6 @@ class App extends Component {
 
       this.setState({ answerCheckContent: 'sorry' })
       this.setState({ inputClasses: 'animated-shake' })
-      window.setTimeout(this.resetAnswerInputAndCheck, 1000);
     }
   };
 
@@ -104,6 +104,7 @@ class App extends Component {
         <AnswerInput checkAnswer={this.checkAnswer}
             value={this.state.inputValue}
             handleChange={this.handleChangeAnswerInput}
+            handleAnimationEnd={this.resetAnswerInputAndCheck}
             classes={this.state.inputClasses} />
         <AnswerCheck content={this.state.answerCheckContent}
             handleClick={this.handleClickAnswerCheck} />

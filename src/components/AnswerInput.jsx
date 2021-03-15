@@ -11,6 +11,10 @@ class AnswerInput extends Component {
     }
   };
 
+  handleAnimationEnd = (event) => {
+    this.props.handleAnimationEnd();
+  };
+
   render() {
     return (
       <input type="text"
@@ -19,6 +23,7 @@ class AnswerInput extends Component {
           value={this.props.value}
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
+          onAnimationEnd={this.handleAnimationEnd}
           placeholder="Enter romanisation" />
     );
   }
