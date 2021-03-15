@@ -18,6 +18,15 @@ input {
   100% { transform: translate(0px, 0px) }
 }
 
+.animated-green {
+  animation: green-fill linear 1s;
+}
+
+@keyframes green-fill {
+  0% { background-color: #6FE12F; }
+  100% { background-color: #FFFFFF;  }
+}
+
 /*.App-logo {
   height: 40vmin;
   pointer-events: none;

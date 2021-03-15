@@ -78,6 +78,7 @@ class App extends Component {
 
     if (currentQuestion.answers.includes(answer.toLowerCase())) {
       this.setState({ answerCheckContent: 'correct' });
+      this.setState({ inputClasses: 'animated-green' });
 
       const toSpeak = new SpeechSynthesisUtterance(currentQuestion.answers[0]);
       toSpeak.lang = 'ko-KR';
@@ -91,8 +92,8 @@ class App extends Component {
         }));
       }
 
-      this.setState({ answerCheckContent: 'sorry' })
-      this.setState({ inputClasses: 'animated-shake' })
+      this.setState({ answerCheckContent: 'sorry' });
+      this.setState({ inputClasses: 'animated-shake' });
     }
   };
 
