@@ -80,7 +80,7 @@ class App extends Component {
       this.setState({ answerCheckContent: 'correct' });
       this.setState({ inputClasses: 'animated-green' });
 
-      const toSpeak = new SpeechSynthesisUtterance(currentQuestion.answers[0]);
+      const toSpeak = new SpeechSynthesisUtterance(currentQuestion.prompt);
       toSpeak.lang = 'ko-KR';
       synth.speak(toSpeak);
 
