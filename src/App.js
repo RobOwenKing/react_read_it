@@ -30,8 +30,8 @@ class App extends Component {
   };
 
   resetAnswerInputAndCheck = () => {
-    this.setState({ answerCheckContent: 'show-answer' });
-    this.setState({ inputClasses: '' });
+    this.setState({ answerCheckContent: 'show-answer',
+        inputClasses: '' });
   };
 
   setNewQuestion = () => {
@@ -54,12 +54,11 @@ class App extends Component {
   startNewRound = () => {
     const newLatestAnswers = [this.state.currentQuestionID, ...this.state.latestAnswers];
     if (newLatestAnswers.length > 5) { newLatestAnswers.pop(); }
-    this.setState({ latestAnswers: newLatestAnswers });
+    this.setState({ latestAnswers: newLatestAnswers,
+        answerCheckContent: 'show-answer',
+        inputValue: '' });
 
     this.setNewQuestion();
-
-    this.setState({ answerCheckContent: 'show-answer' });
-    this.setState({ inputValue: '' });
   };
 
   handleChangeAnswerInput = (event) => {
@@ -78,8 +77,8 @@ class App extends Component {
     const answer = this.state.inputValue;
 
     if (currentQuestion.answers.includes(answer.toLowerCase())) {
-      this.setState({ answerCheckContent: 'correct' });
-      this.setState({ inputClasses: 'animated-green' });
+      this.setState({ answerCheckContent: 'correct',
+          inputClasses: 'animated-green' });
 
       const toSpeak = new SpeechSynthesisUtterance(currentQuestion.prompt);
       toSpeak.lang = 'ko-KR';
@@ -93,8 +92,8 @@ class App extends Component {
         }));
       }
 
-      this.setState({ answerCheckContent: 'sorry' });
-      this.setState({ inputClasses: 'animated-shake' });
+      this.setState({ answerCheckContent: 'sorry',
+          inputClasses: 'animated-shake' });
     }
   };
 
