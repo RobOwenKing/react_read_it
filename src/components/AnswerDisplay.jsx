@@ -5,7 +5,7 @@ class AnswerDisplay extends Component {
     const answer = this.props.answer;
 
     return (
-      <div style={{fontSize: '1.5rem'}}>
+      <div>
         <span style={{fontWeight: 'bold'}}>{answer.prompt}</span>
         &nbsp;-&nbsp;
         /{answer.answers[0]}/ <span style={{fontStyle: 'italic'}}>{answer.translation}</span>

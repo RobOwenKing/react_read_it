@@ -110,9 +110,11 @@ class App extends Component {
         <SubmitButton checkAnswer={this.checkAnswer} />
         <AnswerCheck content={this.state.answerCheckContent}
             handleClick={this.handleClickAnswerCheck} />
-        {this.state.latestAnswers.map((answer,id) => {
+        <div style={{ fontSize: '1.5rem', marginTop: '12px' }}>
+          {this.state.latestAnswers.map((answer,id) => {
               return <AnswerDisplay key={id} answer={QUESTIONS[answer]} />
             })}
+        </div>
       </div>
     );
   };
