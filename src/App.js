@@ -69,8 +69,6 @@ class App extends Component {
   handleClickAnswerCheck = () => {
     const answer = QUESTIONS[this.state.currentQuestionID].answers[0];
     this.setState({ answerCheckContent: answer });
-
-    window.setTimeout(this.startNewRound, 1000);
   };
 
   checkAnswer = () => {
