@@ -33,12 +33,12 @@ input {
 
 @keyframes green-fill {
   0% { background-color: #6FE12F; }
-  50% { background-color: #FFFFFF;  }
+  70% { background-color: #FFFFFF;  }
 }
 
 @keyframes red-fill {
   0% { background-color: #EB4221; }
-  50% { background-color: #FFFFFF;  }
+  70% { background-color: #FFFFFF;  }
 }
 
 /*.App-logo {

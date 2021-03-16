@@ -73,6 +73,8 @@ class App extends Component {
   };
 
   checkAnswer = () => {
+    this.resetAnswerInputAndCheck();
+
     const currentQuestion = QUESTIONS[this.state.currentQuestionID];
     const answer = this.state.inputValue;
 

@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class AnswerCheck extends Component {
   componentToRender = () => {
     if (this.props.content === 'show-answer') {
-      return <span style={{textDecoration: 'underline'}} onClick={this.props.handleClick}>Show answer</span>;
+      return (
+          <span style={{ textDecoration: 'underline', cursor: 'pointer' }}
+              onClick={this.props.handleClick}>Show answer</span>
+        );
     } else if (this.props.content === 'correct') {
       return <span>&#10003;</span>;
     } else if (this.props.content === 'sorry') {
