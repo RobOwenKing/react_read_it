@@ -4,10 +4,23 @@
 
 input {
   margin: 8px auto 12px auto;
+  background-color: #FFFFFF;
 }
 
-.animated-shake {
-  animation: shake 0.5s;
+@media (prefers-reduced-motion: no-preference) {
+  .animated-shake {
+    animation: shake 0.5s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-shake {
+    animation: red-fill 1s;
+  }
+}
+
+.animated-green {
+  animation: green-fill 1s;
 }
 
 @keyframes shake {
@@ -18,13 +31,13 @@ input {
   100% { transform: translate(0px, 0px) }
 }
 
-.animated-green {
-  background-color: #FFFFFF;
-  animation: green-fill linear 1s;
-}
-
 @keyframes green-fill {
   0% { background-color: #6FE12F; }
+  50% { background-color: #FFFFFF;  }
+}
+
+@keyframes red-fill {
+  0% { background-color: #EB4221; }
   50% { background-color: #FFFFFF;  }
 }
 
