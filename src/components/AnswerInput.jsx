@@ -19,7 +19,6 @@ class AnswerInput extends Component {
     return (
       <input type="text"
           className={this.props.classes}
-          style={{fontSize: '2rem'}}
           value={this.props.value}
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}

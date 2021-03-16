@@ -7,6 +7,7 @@ import Prompt from './components/Prompt.jsx';
 import AnswerInput from './components/AnswerInput.jsx';
 import AnswerDisplay from './components/AnswerDisplay.jsx';
 import AnswerCheck from './components/AnswerCheck.jsx';
+import SubmitButton from './components/SubmitButton.jsx';
 
 import QUESTIONS from './data/questions_korean.js';
 
@@ -109,6 +110,7 @@ class App extends Component {
             handleChange={this.handleChangeAnswerInput}
             handleAnimationEnd={this.resetAnswerInputAndCheck}
             classes={this.state.inputClasses} />
+        <SubmitButton checkAnswer={this.checkAnswer} />
         <AnswerCheck content={this.state.answerCheckContent}
             handleClick={this.handleClickAnswerCheck} />
         {this.state.latestAnswers.map((answer,id) => {
