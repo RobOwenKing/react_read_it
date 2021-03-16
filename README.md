@@ -1,3 +1,10 @@
+# About this project
+
+I've recently started learning React and my girlfriend has started learning Korean. These two things have combined into this simple React app to practice reading Hangul, the Korean alphabet.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
