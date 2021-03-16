@@ -6,7 +6,7 @@ class AnswerDisplay extends Component {
 
     return (
       <div>
-        <span style={{fontWeight: 'bold'}}>{answer.prompt}</span>
+        <span style={{fontWeight: 'bold', fontFamily: "'Noto Sans KR', sans-serif" }}>{answer.prompt}</span>
         &nbsp;-&nbsp;
         /{answer.answers[0]}/ <span style={{fontStyle: 'italic'}}>{answer.translation}</span>
       </div>
