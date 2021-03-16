@@ -92,7 +92,7 @@ const QUESTIONS = [
   {
     prompt: '이',
     answers: ['i'],
-    translation: '2 (Sino-Korean system)'
+    translation: '2 (Sino-Korean system); this; tooth'
   },
   {
     prompt: '삼',
@@ -298,6 +298,316 @@ const QUESTIONS = [
     prompt: '아마도',
     answers: ['amado'],
     translation: 'maybe, perhaps'
+  },
+  {
+    prompt: '머리',
+    answers: ['meori'],
+    translation: 'head; hair'
+  },
+  {
+    prompt: '코',
+    answers: ['ko'],
+    translation: 'nose'
+  },
+  {
+    prompt: '귀',
+    answers: ['gwi'],
+    translation: 'ear'
+  },
+  {
+    prompt: '입',
+    answers: ['ip'],
+    translation: 'mouth'
+  },
+  {
+    prompt: '이',
+    answers: ['i'],
+    translation: 'teeth'
+  },
+  {
+    prompt: '목',
+    answers: ['mok'],
+    translation: 'neck'
+  },
+  {
+    prompt: '손',
+    answers: ['son'],
+    translation: 'hand; guest'
+  },
+  {
+    prompt: '다리',
+    answers: ['dari'],
+    translation: 'leg'
+  },
+  {
+    prompt: '발',
+    answers: ['bal'],
+    translation: 'foot'
+  },
+  {
+    prompt: '몸',
+    answers: ['mom'],
+    translation: 'body'
+  },
+  {
+    prompt: '개',
+    answers: ['gae'],
+    translation: 'dog'
+  },
+  {
+    prompt: '고양이',
+    answers: ['goyangi'],
+    translation: 'cat'
+  },
+  {
+    prompt: '새',
+    answers: ['sae'],
+    translation: 'bird'
+  },
+  {
+    prompt: '물고기',
+    answers: ['mulgogi'],
+    translation: 'fish'
+  },
+  {
+    prompt: '토끼',
+    answers: ['tokki'],
+    translation: 'rabbit'
+  },
+  {
+    prompt: '말',
+    answers: ['mal'],
+    translation: 'horse'
+  },
+  {
+    prompt: '소',
+    answers: ['so'],
+    translation: 'cow'
+  },
+  {
+    prompt: '쥐',
+    answers: ['jwi'],
+    translation: 'mouse'
+  },
+  {
+    prompt: '돼지',
+    answers: ['dwaeji'],
+    translation: 'pig'
+  },
+  {
+    prompt: '염소',
+    answers: ['yeomso'],
+    translation: 'goat'
+  },
+  {
+    prompt: '양',
+    answers: ['yang'],
+    translation: 'sheep'
+  },
+  {
+    prompt: '닭',
+    answers: ['dak'],
+    translation: 'chicken'
+  },
+  {
+    prompt: '늑대',
+    answers: ['neukdae'],
+    translation: 'wolf'
+  },
+  {
+    prompt: '여우',
+    answers: ['yeou'],
+    translation: 'fox'
+  },
+  {
+    prompt: '사슴',
+    answers: ['saseum'],
+    translation: 'deer'
+  },
+  {
+    prompt: '황소',
+    answers: ['hwangso'],
+    translation: 'ox'
+  },
+  {
+    prompt: '곰',
+    answers: ['gom'],
+    translation: 'bear'
+  },
+  {
+    prompt: '판다',
+    answers: ['panda'],
+    translation: 'panda'
+  },
+  {
+    prompt: '오리',
+    answers: ['ori'],
+    translation: 'duck'
+  },
+  {
+    prompt: '사자',
+    answers: ['saja'],
+    translation: 'lion'
+  },
+  {
+    prompt: '고릴라',
+    answers: ['gorilla'],
+    translation: 'gorilla'
+  },
+  {
+    prompt: '뱀',
+    answers: ['baem'],
+    translation: 'snake'
+  },
+  {
+    prompt: '호랑이',
+    answers: ['horangi'],
+    translation: 'tiger'
+  },
+  {
+    prompt: '과일',
+    answers: ['gwail'],
+    translation: 'fruit'
+  },
+  {
+    prompt: '딸기',
+    answers: ['ttalgi'],
+    translation: 'strawberry'
+  },
+  {
+    prompt: '오렌지',
+    answers: ['orenji'],
+    translation: 'orange'
+  },
+  {
+    prompt: '바나나',
+    answers: ['banana'],
+    translation: 'banana'
+  },
+  {
+    prompt: '사과',
+    answers: ['sagwa'],
+    translation: 'apple'
+  },
+  {
+    prompt: '키위',
+    answers: ['kiwi'],
+    translation: 'kiwi'
+  },
+  {
+    prompt: '망고',
+    answers: ['manggo'],
+    translation: 'mango'
+  },
+  {
+    prompt: '배',
+    answers: ['bae'],
+    translation: 'pear'
+  },
+  {
+    prompt: '포도',
+    answers: ['podo'],
+    translation: 'grapes'
+  },
+  {
+    prompt: '수박',
+    answers: ['subak'],
+    translation: 'watermelon'
+  },
+  {
+    prompt: '체리',
+    answers: ['cheri'],
+    translation: 'cherry'
+  },
+  {
+    prompt: '자두',
+    answers: ['jadu'],
+    translation: 'plum'
+  },
+  {
+    prompt: '살구',
+    answers: ['salgu'],
+    translation: 'apricot'
+  },
+  {
+    prompt: '감',
+    answers: ['gam'],
+    translation: 'persimmon'
+  },
+  {
+    prompt: '멜론',
+    answers: ['mellon'],
+    translation: 'melon'
+  },
+  {
+    prompt: '야채',
+    answers: ['yachae'],
+    translation: 'vegetable'
+  },
+  {
+    prompt: '오이',
+    answers: ['oi'],
+    translation: 'cucumber'
+  },
+  {
+    prompt: '토마토',
+    answers: ['tomato'],
+    translation: 'tomato'
+  },
+  {
+    prompt: '감자',
+    answers: ['gamja'],
+    translation: 'potato'
+  },
+  {
+    prompt: '피망',
+    answers: ['pimang'],
+    translation: 'bell pepper'
+  },
+  {
+    prompt: '마늘',
+    answers: ['maneul'],
+    translation: 'garlic'
+  },
+  {
+    prompt: '콩',
+    answers: ['kong'],
+    translation: 'bean'
+  },
+  {
+    prompt: '버섯',
+    answers: ['beoseot'],
+    translation: 'mushroom'
+  },
+  {
+    prompt: '부추',
+    answers: ['buchu'],
+    translation: 'leek'
+  },
+  {
+    prompt: '생강',
+    answers: ['saenggang'],
+    translation: 'ginger'
+  },
+  {
+    prompt: '양파',
+    answers: ['yangpa'],
+    translation: 'onion'
+  },
+  {
+    prompt: '밤',
+    answers: ['bam'],
+    translation: 'chestnut'
+  },
+  {
+    prompt: '잣',
+    answers: ['jat'],
+    translation: 'pine nut'
+  },
+  {
+    prompt: '호두',
+    answers: ['hodu'],
+    translation: 'walnut'
   }
 ];
 
